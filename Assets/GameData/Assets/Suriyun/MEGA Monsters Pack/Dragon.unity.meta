@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 7b4e451192ee4834bb6f9c8865e82a52
+labels:
+- SDRPGPack2
+- SDRPGPack3
+- SDRPGPack5
+- SDRPGPack4
+- SDRPGPack1
+- toon
+- Ami
+- Akane
+- SD
+- lowpoly
+- mobile
+- cute
+- monster
+- sheep
+- cat
+- pet
+- dog
+- toy
+- SDDragon
+- dragon
+- Faye
+timeCreated: 1454575295
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65173
+  packageName: MEGA Monsters Pack
+  packageVersion: 2.0
+  assetPath: Assets/Suriyun/MEGA Monsters Pack/Dragon.unity
+  uploadId: 584067

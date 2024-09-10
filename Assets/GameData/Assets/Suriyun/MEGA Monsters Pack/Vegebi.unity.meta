@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 4c22141ccad98d54c8a039231405f571
+labels:
+- SDRPGPack2
+- SDRPGPack3
+- SDRPGPack5
+- SDRPGPack4
+- SDRPGPack1
+- toon
+- Ami
+- Akane
+- SD
+- lowpoly
+- mobile
+- cute
+- monster
+- sheep
+- cat
+- pet
+- dog
+- toy
+- Vegebi
+timeCreated: 1455265367
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65173
+  packageName: MEGA Monsters Pack
+  packageVersion: 2.0
+  assetPath: Assets/Suriyun/MEGA Monsters Pack/Vegebi.unity
+  uploadId: 584067

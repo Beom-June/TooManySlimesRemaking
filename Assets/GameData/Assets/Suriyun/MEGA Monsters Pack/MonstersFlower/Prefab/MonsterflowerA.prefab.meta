@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: b1fcd8519609b524f8d7e5dfc343ad22
+labels:
+- SDRPGPack1
+- SDRPGPack2
+- SDRPGPack3
+- SDRPGPack4
+- SDRPGPack5
+- toon
+- Ami
+- Akane
+- SD
+- lowpoly
+- mobile
+- cute
+- monster
+- sheep
+- cat
+- pet
+- toy
+- Vegebi
+- monstersflower
+- dog
+timeCreated: 1460094037
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65173
+  packageName: MEGA Monsters Pack
+  packageVersion: 2.0
+  assetPath: Assets/Suriyun/MEGA Monsters Pack/MonstersFlower/Prefab/MonsterflowerA.prefab
+  uploadId: 584067

@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: 0227d806170ee084699c3fa9ac272738
+labels:
+- SDRPGPack1
+- SDRPGPack2
+- SDRPGPack3
+- SDRPGPack5
+- SDRPGPack4
+- toon
+- Ami
+- Akane
+- SD
+- lowpoly
+- mobile
+- cute
+- monster
+- sheep
+- toy
+- dog
+- pet
+- cat
+timeCreated: 1450533411
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65173
+  packageName: MEGA Monsters Pack
+  packageVersion: 2.0
+  assetPath: Assets/Suriyun/MEGA Monsters Pack/momo/Prefab/momo_n1.prefab
+  uploadId: 584067

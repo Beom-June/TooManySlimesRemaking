@@ -1,0 +1,42 @@
+fileFormatVersion: 2
+guid: 78785b3984f3ada47952f7244fb2e37c
+labels:
+- Minimonsters
+- dragon
+- Chick
+- Vegebi
+- toy
+- dog
+- pet
+- cat
+- sheep
+- cute
+- mobile
+- lowpoly
+- Akane
+- Ami
+- SDRPGPack5
+- SDRPGPack4
+- SDRPGPack3
+- SDRPGPack2
+- SDRPGPack1
+- toon
+- SD
+- monster
+- Pig
+- Bear
+- Bunny
+- Dog
+timeCreated: 1455970531
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65173
+  packageName: MEGA Monsters Pack
+  packageVersion: 2.0
+  assetPath: Assets/Suriyun/MEGA Monsters Pack/Minimonsters/Prefab/BearA.prefab
+  uploadId: 584067

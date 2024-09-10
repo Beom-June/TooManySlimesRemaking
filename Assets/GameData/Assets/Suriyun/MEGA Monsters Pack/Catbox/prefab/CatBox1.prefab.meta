@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: e79bed0a7b3670348bd7171075715826
+labels:
+- SDRPGPack2
+- SDRPGPack4
+- SDRPGPack3
+- SDRPGPack5
+- SDRPGPack1
+- toon
+- Ami
+- Akane
+- SD
+- lowpoly
+- mobile
+- cute
+- monster
+- sheep
+- cat
+- pet
+- dog
+- toy
+- Vegebi
+timeCreated: 1456972782
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 65173
+  packageName: MEGA Monsters Pack
+  packageVersion: 2.0
+  assetPath: Assets/Suriyun/MEGA Monsters Pack/Catbox/prefab/CatBox1.prefab
+  uploadId: 584067
