@@ -11,31 +11,31 @@ public class PlayerController : MonoBehaviour
     private float _horizentalAxis;
     private float _verticalAxis;
 
-    [SerializeField] private bool _playerJump;           // 플레이어 점프 bool 값
-    [SerializeField] private bool _playerDash;                            // 플레이어 회피 bool 값
-    [SerializeField] private bool _isJump;               // 플레이어  점프 제어 bool 값
-    [SerializeField] private bool _isDash;                                // 플레이어 회피 제어 bool 값
-    [SerializeField] private float _jumpPower = 20.0f;
-
     /// <summary>
     /// Component
     /// </summary>
+    [SerializeField] private GameObject _hitBox;
     private Vector3 _moveVec;
-    private Vector3 _dashVec;                                  // 회피시 방향이 전환되지 않도록 제한
     private Rigidbody _playerRigidbody;
     private Animator _animator;
     private NavMeshAgent _navMeshAgent;
 
-    [Header("PlayerState")]
-    [SerializeField] private float _speed = 10f;
-    //[SerializeField] VirtualJoyStick virtualJoyStick;
+    private PlayerState _playerState;
 
+    /// <summary>
+    /// Property
+    /// </summary>
+    public Animator PlayerAnim
+    {
+        get { return _animator; }
+        set { _animator = value; }
+    }
     void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
         _playerRigidbody = GetComponent<Rigidbody>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
-
+        _playerState = GetComponent<PlayerState>();
     }
     void Start()
     {
@@ -45,11 +45,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
             PlayerInput();
-
             PlayerMove();
-            PlayerTurn();
-            PlayerJump();
-            PlayerDash();
     }
     void OnDestroy()
     {
@@ -64,24 +60,21 @@ public class PlayerController : MonoBehaviour
     {
         _horizentalAxis = Input.GetAxisRaw("Horizontal");
         _verticalAxis = Input.GetAxisRaw("Vertical");
-
-        _playerJump = Input.GetKeyDown(KeyCode.Space);
-        _playerDash = Input.GetKeyDown(KeyCode.LeftShift);
     }
 
+    private void PlayerAttack()
+    {
+
+    }
 
     #region Player 이동 관련
     // 플레이어 이동 함수
     public void PlayerMove()
     {
         _moveVec = new Vector3(_horizentalAxis, 0, _verticalAxis).normalized;
-        if (_isDash)
-        {
-            // 회피 방향이랑 가는 방향이랑 같게
-            _moveVec = _dashVec;
-        }
 
         // 목표 속도 설정
+        float _speed = _playerState.Speed;
         Vector3 _targetVelocity = _moveVec * _speed;
         _targetVelocity.y = _playerRigidbody.velocity.y; // y축 속도는 점프 등으로 인한 변화를 유지
 
@@ -98,58 +91,13 @@ public class PlayerController : MonoBehaviour
         transform.LookAt(transform.position + _moveVec);
     }
 
-    // 플레이어 점프 함수
-    void PlayerJump()
-    {
-        if (_playerJump && !_isJump && !_isDash)
-        {
-            _navMeshAgent.enabled = false; // NavMeshAgent 비활성화
-
-            // 현재 속도를 가져와서 y축 속도를 점프 파워로 설정
-            Vector3 _newVelocity = _playerRigidbody.velocity;
-            _newVelocity.y = _jumpPower;
-            _playerRigidbody.velocity = _newVelocity;
-
-            _animator.SetTrigger("doJump");
-            _isJump = true;
-        }
-    }
-
-    // 플레이어 회피 함수
-    void PlayerDash()
-    {
-        //if (playerJump && isJump == false && moveVec != Vector3.zero && isDash == false)
-        if (_playerDash && !_isJump && _moveVec != Vector3.zero && !_isDash)
-        {
-            _dashVec = _moveVec;
-            _speed *= 2;
-            _animator.SetTrigger("doDash");
-            _isDash = true;
-
-            // 회피 빠져나오는 속도
-            Invoke("PlayerDashEnd", 0.2f);
-
-            // 딜레이를 넣어야함
-        }
-    }
-
-    // PlayerDash에서 사용 중
-    void PlayerDashEnd()
-    {
-        // 원래 속도로 돌아오게함
-        _speed *= 0.5f;
-        _isDash = false;
-    }
     #endregion
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
-            _isJump = false; // 지면에 닿으면 점프 상태 해제
-            _isDash = false;
             _navMeshAgent.enabled = true;
-            Debug.Log("Player landed");
         }
     }
 
@@ -161,13 +109,13 @@ public class PlayerController : MonoBehaviour
         if (newGameState == GameState.GameOver)
         {
             // 게임 오버 상태 처리, 예: 플레이어 컨트롤 비활성화
-            _speed = 0;
+            _playerState.Speed = 0;
             Debug.Log("PlayerController: 게임 오버 - 플레이어 이동 멈춤");
         }
         else if (newGameState == GameState.Playing)
         {
             // 플레이어 컨트롤 다시 활성화
-            _speed = 10f;
+            _playerState.Speed = 10f;
             Debug.Log("PlayerController: 게임 시작 - 플레이어 이동 가능");
         }
     }
