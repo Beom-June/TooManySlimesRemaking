@@ -33,4 +33,33 @@ public class MonsterManager : MonoBehaviour
 
         Debug.Log("Total " + _monsterList.Count + "Monster Checking");
     }
+    // 몬스터 상태의 이벤트를 구독하는 메서드
+    private void SubscribeToMonsterEvents()
+    {
+        foreach (GameObject monster in _monsterList)
+        {
+            MonsterState monsterState = monster.GetComponent<MonsterState>();
+            if (monsterState != null)
+            {
+                monsterState._onMonsterDeath += HandleMonsterDeath;
+            }
+        }
+    }
+
+    // 몬스터 체력이 0이 되었을 때 호출되는 메서드
+    private void HandleMonsterDeath(GameObject deadMonster)
+    {
+        Debug.Log(deadMonster.name + " has been defeated.");
+
+        // 리스트에서 몬스터 제거
+        if (_monsterList.Contains(deadMonster))
+        {
+            _monsterList.Remove(deadMonster);
+            Debug.Log(deadMonster.name + " removed from list.");
+        }
+        else
+        {
+            Debug.Log(deadMonster.name + " not found in list.");
+        }
+    }
 }

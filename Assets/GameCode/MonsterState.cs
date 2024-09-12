@@ -16,6 +16,10 @@ public class MonsterState : MonoBehaviour
     [SerializeField] private GameObject _item;
     [SerializeField] private float _dropPercent = 50.0f;
 
+    // 몬스터 사망 이벤트 정의
+    public delegate void MonsterDeathHandler(GameObject deadMonster);
+    public event MonsterDeathHandler _onMonsterDeath;
+
     private Animator _animator;
 
     private void Awake()
@@ -43,6 +47,7 @@ public class MonsterState : MonoBehaviour
 
             // 추가적인 처리를 여기에 추가
             // 몬스터 죽음 처리, 애니메이션 변경 등
+            _onMonsterDeath?.Invoke(gameObject);
         }
     }
 }
