@@ -7367,7 +7367,7 @@ MonoBehaviour:
   _bossDropPercent: 25
   _hpBar: {fileID: 104007574}
   _dropJewel: {fileID: 5886549474776813172, guid: 95b49995e4a7abc4aaba0f34865c4781, type: 3}
-  _dropPercent: 100
+  _dropPercent: 0
 --- !u!1 &1972386778
 GameObject:
   m_ObjectHideFlags: 0
@@ -18672,7 +18672,7 @@ MonoBehaviour:
   _bossDropPercent: 25
   _hpBar: {fileID: 136341142}
   _dropJewel: {fileID: 5886549474776813172, guid: 95b49995e4a7abc4aaba0f34865c4781, type: 3}
-  _dropPercent: 100
+  _dropPercent: 0
 --- !u!54 &3805189232991800003
 Rigidbody:
   m_ObjectHideFlags: 0
