@@ -16,4 +16,13 @@ public class UIManager : MonoBehaviour
         _shopUI.SetActive(false);
         Time.timeScale = 1;
     }
+
+    // 보석 수를 업데이트하는 메서드
+    public void UpdateJewelCount(int jewelCount)
+    {
+        foreach (Text _jewelText in _jewelCountText)
+        {
+            _jewelText.text = jewelCount.ToString();  // 모든 텍스트에 보석 수 적용
+        }
+    }
 }

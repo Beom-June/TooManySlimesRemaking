@@ -27,6 +27,7 @@ public class PlayerHitBox : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerExit(Collider collider)
     {
         if (collider.CompareTag("Monster"))
@@ -36,6 +37,15 @@ public class PlayerHitBox : MonoBehaviour
             {
                 _playerController.PlayerAnim.SetBool("isAttack", false);
             }
+        }
+    }
+
+    // 공격 애니메이션을 중지하는 메서드
+    public void StopAttackAnimation()
+    {
+        if (_playerController != null)
+        {
+            _playerController.PlayerAnim.SetBool("isAttack", false);
         }
     }
 }
