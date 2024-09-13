@@ -10,11 +10,6 @@ public class PlayerHitBox : MonoBehaviour
         _playerController = GetComponentInParent<PlayerController>();
     }
 
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Monster"))
@@ -24,6 +19,7 @@ public class PlayerHitBox : MonoBehaviour
             if (_playerController != null)
             {
                 _playerController.PlayerAnim.SetBool("isAttack", true);
+                //_playerController.SetAttacking(true);
             }
         }
     }
@@ -36,6 +32,7 @@ public class PlayerHitBox : MonoBehaviour
             if (_playerController != null)
             {
                 _playerController.PlayerAnim.SetBool("isAttack", false);
+                //_playerController.SetAttacking(false);
             }
         }
     }

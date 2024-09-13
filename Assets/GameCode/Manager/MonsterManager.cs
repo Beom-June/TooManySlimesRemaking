@@ -17,7 +17,7 @@ public class MonsterManager : MonoBehaviour
 
     void Update()
     {
-        
+        SubscribeToMonsterEvents();
     }
     // 부모 오브젝트의 모든 자식 오브젝트를 리스트에 추가하는 메서드
     private void AddAllChildrenToList()
@@ -49,17 +49,17 @@ public class MonsterManager : MonoBehaviour
     // 몬스터 체력이 0이 되었을 때 호출되는 메서드
     private void HandleMonsterDeath(GameObject deadMonster)
     {
-        Debug.Log(deadMonster.name + " has been defeated.");
+        //Debug.Log(deadMonster.name + " has been defeated.");
 
         // 리스트에서 몬스터 제거
         if (_monsterList.Contains(deadMonster))
         {
             _monsterList.Remove(deadMonster);
-            Debug.Log(deadMonster.name + " removed from list.");
+            //Debug.Log(deadMonster.name + " removed from list.");
         }
         else
         {
-            Debug.Log(deadMonster.name + " not found in list.");
+            //Debug.Log(deadMonster.name + " not found in list.");
         }
     }
 }
